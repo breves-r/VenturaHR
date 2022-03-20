@@ -1,0 +1,148 @@
+/* Colors */
+:root {
+    --white: #FFFFFF;
+    --black: #000000;    
+    --navbar: #212529;
+    --body: #CCCCCC;
+    --title: #212529;
+    --sub-title: #212121;
+    --icon: #563d7c;
+}
+
+/* Resets */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: var(--body);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.wrapper{
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+    padding: 30px;
+    margin: 20px;
+    width: 1160px;    
+    max-width: 1160px;
+    min-width: 600px;
+}
+
+table{
+    background-color: white;
+    font-size: 10px;
+    /* border: 5px solid red; */
+    /* tirar dps */
+    /* border: 1px solid #111111; */
+    width: '100%';
+}
+
+.container{
+    margin: 5px;
+    align-content: center;
+}
+
+p.title{
+    margin: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    color: var(--title);
+}
+
+label{
+    font-size: 14px;
+    justify-content: space-between;
+}
+
+td {
+    flex-wrap: nowrap;
+}
+
+.sub-title{
+    margin: 10px;
+    font-size: 14px;
+    font-weight: bolder;
+    color: var(--sub-title);
+}
+
+.sub-title ~ p{
+    margin: 10px;
+    font-size: 12px;
+    color: var(--sub-title);
+}
+
+.title-form{
+    margin: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bolder;
+    color: var(--title);
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.button .button{
+    width: 130px;
+    height: 32px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+a {
+    text-align: center;    
+}
+
+.material-icons{
+    font-size: 20px !important;
+    line-height: normal;
+    color:var(--icon);
+}
+
+
+.footer {
+    padding: 10px;
+    background-color: #808080;
+    position: fixed;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+}
+
+.rodape{
+    align-items: center;
+    text-align: center;    
+    color:#FFFFFF;    
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
