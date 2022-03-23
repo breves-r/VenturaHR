@@ -1,5 +1,6 @@
 package br.edu.infnet.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -39,6 +40,7 @@ public class Criterio implements Serializable {
     @Column(nullable = false)
     private int peso;
     
+    @JsonIgnore
     @JoinColumn(name = "id_vaga", referencedColumnName = "id", nullable = false)
     @ManyToOne(optional = false)
     private Vaga idVaga;

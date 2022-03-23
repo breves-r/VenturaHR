@@ -68,7 +68,7 @@ public class UsuarioController {
         return retorno;
     }
     
-    @PostMapping("/inserir")
+    @PostMapping
     public ResponseEntity inserirUsuario(@RequestBody Usuario usuario){
         ResponseEntity retorno = ResponseEntity.badRequest().build();
         
