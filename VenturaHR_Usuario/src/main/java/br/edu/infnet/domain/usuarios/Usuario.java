@@ -52,8 +52,8 @@ public class Usuario implements Serializable {
     @Basic(optional = false)
     @Column(nullable = false, length = 32)
     private String senha;
-    @Basic(optional = false)
-    @Column(nullable = false, length = 11)
+    
+    @Column(length = 11)
     private String cpf;
     @Column(name = "razao_social", length = 50)
     private String razaoSocial;

@@ -19,16 +19,16 @@ public class Usuario {
     private String cpf;
     private String cnpj;
     private String razaoSocial;
-
-    @Override
-    public String toString() {
-        return "Usuario{" + "nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf + ", cnpj=" + cnpj + ", razaoSocial=" + razaoSocial + ", tipo=" + tipo + '}';
-    }
-    //@NotBlank(message = "O campo Tipo é obrigatório")
     private Character tipo;
+    
 
     public Usuario(){
         
+    }
+    
+    @Override
+    public String toString() {
+        return "Usuario{" + "nome=" + nome + ", endereco=" + endereco + ", telefone=" + telefone + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf + ", cnpj=" + cnpj + ", razaoSocial=" + razaoSocial + ", tipo=" + tipo + '}';
     }
     
     public Integer getId() {

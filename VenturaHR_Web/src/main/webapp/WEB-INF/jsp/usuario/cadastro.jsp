@@ -74,13 +74,7 @@
                                  placeholder="Password" value="123" />
                         </td>
                       </tr>
-                      <%-- <tr>
-                        <td><p class="title-form">Confimar Senha:</p></td>
-                        <td>
-                            <input type="password" class="form-control form-control-sm" name="senha" maxlength="15" size="20"
-                            placeholder="Password"/>
-                        </td> 
-                      </tr>--%>
+                      
                       <tr>
                         <td><p class="title-form">Tipo de Conta:</p></td>
                         <td class="radio">
@@ -94,7 +88,7 @@
                        <td><p class="title-form">CPF:</p></td>
                         <td>
                             <input type="text" class="form-control form-control-sm" name="cpf" maxlength="11" size="20"
-                                   placeholder="CPF" value="12345678"/>
+                                   placeholder="CPF" value=""/>
                         </td>
                       </tr> 
                        <tr>

@@ -147,7 +147,7 @@
                 <td valign="top">
                   <p class="title">Acesso ao Sistema</p>
                       <table id="AutoNumber4" class="center">
-                        <form>
+                        <form action="/login" method="post">
                           <div class="form-group row">
                             <tr>
                               <td>
@@ -186,15 +186,19 @@
                               <div class="button">
                                 <input
                                   class="btn btn-primary button"
-                                  type="button"
+                                  type="submit"
                                   value="Entrar"
-                                  onclick="location.href='./009_03_Tela_de_Ofertas.html'"
                                 />
                               </div>
                             </td>
                           </tr>
                         </form>
                       </table>
+                  <c:if test="${not empty erro}">
+                      <div class="alert alert-warning">
+				<strong>Atenção!</strong> ${erro}
+			</div>
+                  </c:if>
                   <br />
                   <div class="container">
                     <table id="AutoNumber5">
