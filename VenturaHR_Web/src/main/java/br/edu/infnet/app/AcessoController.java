@@ -1,7 +1,10 @@
 package br.edu.infnet.app;
 
 import br.edu.infnet.domain.Usuario;
+import br.edu.infnet.domain.Vaga;
 import br.edu.infnet.infra.UsuarioService;
+import br.edu.infnet.infra.VagaService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +19,9 @@ public class AcessoController {
     
     @Autowired
     private UsuarioService usuarioService;
+    
+    @Autowired
+    private VagaService vagaService;
     
     @GetMapping(value = "/")
     public String telaIndex(){
@@ -39,6 +45,12 @@ public class AcessoController {
                     break;
                 case 'E':
                     destino = "/empresa/index";
+                    try{
+                        List<Vaga> vagas = vagaService.listaVagas();
+                        retorno.addObject("vagas", vagas);
+                    }catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
                     break;
             }
             retorno.addObject("user", usuario);
