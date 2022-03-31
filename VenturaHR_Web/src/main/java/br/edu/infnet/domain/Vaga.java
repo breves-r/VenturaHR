@@ -15,6 +15,13 @@ public class Vaga {
     public Vaga(){
     }
 
+    @Override
+    public String toString() {
+        return "Vaga{" + "id=" + id + ", cargo=" + cargo + ", cidade=" + cidade + ", formaContratacao=" + formaContratacao + ", idUsuario=" + idUsuario + ", criterioList=" + criterioList + '}';
+    }
+    
+    
+
     public Integer getId() {
         return id;
     }

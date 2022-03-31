@@ -24,6 +24,10 @@
       <nav class="navbar navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand mb-0 h1"> Ventura HR </a>
+          
+            <c:if test="${not empty user}">
+		<a class="nav-link" href="/logout">Logout, ${user.nome}</a>
+            </c:if>
         </div>
       </nav>
     </header>
@@ -60,18 +64,8 @@
                   <tr>
                     <td width="100%" colspan="2">
                       <div class="button">
-                          <%-- <input
-                          class="btn btn-primary button"
-                          type="button"
-                          value="Alterar Dados"
-                          onclick="location.href='09_04_Alterar_Usuario.html'"
-                        /> --%>
-                        <input
-                          class="btn btn-primary button"
-                          type="button"
-                          value="Criar Vaga"
-                          onclick="location.href='09_04_Alterar_Usuario.html'"
-                        />
+                         
+                        <a href="/vaga" class="btn btn-primary button">Criar Vaga</a>
                         
                       </div>
                     </td>
@@ -92,6 +86,7 @@
                       <p align="center">
                         <b><font size="2">Suas Vagas Publicadas:</font></b>
                       </p>
+                      <c:if test="${not empty vagasUser}">
                       <table
                         border="1"
                         cellpadding="0"
@@ -103,15 +98,16 @@
                       >
                         <tr>
                           <th width="200"><font size="2">Cargo</font></th>
-                          <th width="100"><font size="2">Data Fim</font></th>
+                          <th width="100"><font size="2">Cidade</font></th>
                           <th width="1"><br /></th>
                         </tr>
+                        <c:forEach var="v" items="${vagasUser}">
                         <tr>
                           <td width="200">
-                            <font size="2">Analista J2EE</font>
+                            <font size="2">${v.cargo}</font>
                           </td>
-                          <td width="100" align="center">
-                            <font size="2">99/99/9999</font>
+                          <td width="100" >
+                            <font size="2">${v.cidade}</font>
                           </td>
                           <td width="1" align="center">
                             <font size="2"
@@ -123,24 +119,13 @@
                             >
                           </td>
                         </tr>
-                        <tr>
-                          <td width="200">
-                            <font size="2">Suporte de Rede Wireless</font>
-                          </td>
-                          <td width="100" align="center">
-                            <font size="2">99/99/9999</font>
-                          </td>
-                          <td width="1" align="center">
-                            <font size="2"
-                              ><a href="a"
-                                ><span class="material-icons">
-                                  remove_red_eye
-                                </span></a
-                              ></font
-                            >
-                          </td>
-                        </tr>
+                        </c:forEach>
+                        
                       </table>
+                      </c:if>
+                      <c:if test="${empty vagas}">
+                            <p>Não existem vagas publicadas!</p>
+                      </c:if>
                     </td>
                   </tr>
                   <tr>
@@ -154,30 +139,6 @@
                       </p>
                       <div align="center">
                         <center>
-                            <%-- <c:if test="${not empty vagas}">
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Cargo</th>
-                                            <th>Cidade</th>
-                                            <th>Forma Contratação</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <c:forEach var="v" items="${vagas}">
-                                            <tr>
-                                                <td>${v.cargo}</td>
-                                                <td>${v.cidade}</td>
-                                                <td>${v.formaContratacao}</td>
-                                            </tr>
-                                        </c:forEach>
-                                    </tbody>
-                                </table>
-                            </c:if>
-                            <c:if test="${empty vagas}">
-                                <p>Não existem vagas cadastradas!</p>
-                            </c:if> --%>
-                            
                             <table
                             width="100%"
                             border="1"

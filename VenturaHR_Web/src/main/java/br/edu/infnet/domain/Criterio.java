@@ -10,6 +10,13 @@ public class Criterio {
     public Criterio(){
     }
 
+    @Override
+    public String toString() {
+        return "Criterio{" + "descricao=" + descricao + ", perfil=" + perfil + ", peso=" + peso + '}';
+    }
+
+    
+    
     public Integer getId() {
         return id;
     }
