@@ -73,7 +73,7 @@
                   <tr>
                     <td width="50%" valign="top">
                       <p align="center">
-                        <b><font size="2">Mensagens do Sistema:</font></b>
+                        <b><font size="3">Mensagens do Sistema:</font></b>
                       </p>
                       <p>
                         <font size="2"
@@ -84,7 +84,7 @@
                     </td>
                     <td width="50%" valign="top">
                       <p align="center">
-                        <b><font size="2">Suas Vagas Publicadas:</font></b>
+                        <b><font size="3">Suas Vagas Publicadas:</font></b>
                       </p>
                       <c:if test="${not empty vagasUser}">
                       <table
@@ -123,20 +123,14 @@
                         
                       </table>
                       </c:if>
-                      <c:if test="${empty vagas}">
-                            <p>Não existem vagas publicadas!</p>
+                      <c:if test="${empty vagasUser}">
+                            <p align="center">
+                        <b><font size="2">Não existem vagas publicadas!</font></b>
+                      </p>
                       </c:if>
                     </td>
                   </tr>
-                  <tr>
-                    <td width="100%" colspan="2">
-                      <p align="center">
-                        <b
-                          ><font size="2"
-                            >Consulta de Vagas Disponíveis:</font
-                          ></b
-                        >
-                      </p>
+                  
                       <div align="center">
                         <center>
                             <table
@@ -148,90 +142,60 @@
                             bordercolor="#111111"
                             id="AutoNumber6"
                           >
+                                
+                                    
                             <tr>
-                              <td>
-                                <font size="2"
+                                <td width="100%" colspan="2">
+                                    <p align="center">
+                                      <b><font size="3">Consulta de Vagas Disponíveis:</font></b>
+                                    </p>
+                                </td>
+                              
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <form action="/pesquisarCidade" method="post">
+                                  <%--  <font size="2"
                                   >com <b>todas</b> as palavras</font
-                                >
-                              </td>
-                              <td>
-                                <input
-                                  type="text"
-                                  name="pesquisa_1"
-                                  size="60"
-                                />
+                                > --%>
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Pesquisar por Cidade" name="pesquisa">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-primary button" type="submit">Pesquisar</button>
+                                    </div>
+                                </div>
+                                </form>
                               </td>
                             </tr>
+                                
+                                
                             <tr>
                               <td>
-                                <font size="2"
-                                  >com <b>qualquer uma</b> das palavras</font
-                                >
-                              </td>
-                              <td>
-                                <input
-                                  type="text"
-                                  name="pesquisa_2"
-                                  size="60"
-                                />
+                                  <form action="/pesquisarCargo" method="post">
+                                  <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder="Pesquisar por Cargo" name="pesquisa">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-primary button" type="submit">Pesquisar</button>
+                                    </div>
+                                </div>
+                                    </form>
                               </td>
                             </tr>
-                            <tr>
-                              <td>
-                                <b><font size="2">sem</font></b
-                                ><font size="2"> as palavras</font>
-                              </td>
-                              <td>
-                                <input
-                                  type="text"
-                                  name="pesquisa_3"
-                                  size="60"
-                                />
-                              </td>
-                            </tr>
+                            
                             <tr>
                               <td colspan="2">
                                 <div class="button">
                                   <input
                                     class="btn btn-primary button"
-                                    type="submit"
-                                    value="Pesquisar Vagas"
+                                    type="button"
+                                    value="Ver Todas as Vagas" 
+                                    onclick="location.href='/home'"
                                   />
                                 </div>
                               </td>
-                            </tr>
-                            <tr>
-                              <td colspan="2">
-                                <p
-                                  align="center"
-                                  style="margin-top: 0; margin-bottom: 0"
-                                >
-                                  <font size="2"
-                                    ><b>34 Vagas encontradas</b>, exibindo de 1
-                                    a 5</font
-                                  >
-                                </p>
-                                <p
-                                  align="center"
-                                  style="margin-top: 0; margin-bottom: 0"
-                                >
-                                  <font size="2"
-                                    >[<a href="a">Início</a> |
-                                    <a href="a"> Anterior</a>]
-                                    <a href="a">1</a> <a href="a">2</a>
-                                    <a href="a">3</a> <a href="a">4</a> [<a
-                                      href="a"
-                                      >Próxima</a
-                                    >
-                                    | <a href="a">Fim</a>]</font
-                                  >
-                                </p>
-                                <p
-                                  align="left"
-                                  style="margin-top: 0; margin-bottom: 0"
-                                >
-                                  <br />
-                                </p>
+                            </tr> 
+                            
                                 <c:if test="${not empty vagas}">
                                     <table
                                       border="1"
@@ -276,93 +240,10 @@
                                           </td>
                                         </tr>
                                       </c:forEach>
-                                      <%--  <tr>
-                                        <td width="27%">
-                                          <font size="2">Programador Java</font>
-                                        </td>
-                                        <td width="52%">
-                                          Phasellus adipiscing feugiat magna.
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2">São Paulo</font>
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2"
-                                            ><a href="a"
-                                              ><span class="material-icons">
-                                                remove_red_eye
-                                              </span></a
-                                            ></font
-                                          >
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td width="27%">
-                                          <font size="2">Gerente de Projetos</font>
-                                        </td>
-                                        <td width="52%">Nam pretium nisi.</td>
-                                        <td width="21%">
-                                          <font size="2">Vitória</font>
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2"
-                                            ><a href="a"
-                                              ><span class="material-icons">
-                                                remove_red_eye
-                                              </span></a
-                                            ></font
-                                          >
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td width="27%">
-                                          <font size="2"
-                                            >Suporte de Rede Wireless</font
-                                          >
-                                        </td>
-                                        <td width="52%">
-                                          Aenean felis leo, sagittis ac, aliquam
-                                          sed, mattis eu, ligula.
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2">Brasília</font>
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2"
-                                            ><a href="a"
-                                              ><span class="material-icons">
-                                                remove_red_eye
-                                              </span></a
-                                            ></font
-                                          >
-                                        </td>
-                                      </tr>
-                                      <tr>
-                                        <td width="27%">
-                                          <font size="2">Arquiteto J2EE</font>
-                                        </td>
-                                        <td width="52%">
-                                          Ut pede tortor, sodales a, hendrerit eget,
-                                          pellentesque in, leo.
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2">Salvador</font>
-                                        </td>
-                                        <td width="21%">
-                                          <font size="2"
-                                            ><a href="a"
-                                              ><span class="material-icons">
-                                                remove_red_eye
-                                              </span></a
-                                            ></font
-                                          >
-                                        </td>
-                                      </tr> --%>
+                                        
                                     </table>
                                     </c:if>
-                                    <c:if test="${empty vagas}">
-                                        <p>Não existem vagas cadastradas!</p>
-                                    </c:if>
+                                    
                               </td>
                             </tr>
                           </table>

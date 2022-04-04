@@ -176,7 +176,7 @@
                                   type="password"
                                   name="senha"
                                   size="30"
-                                  placeholder="Password"
+                                  placeholder="Senha"
                                 />
                               </td>
                             </tr>

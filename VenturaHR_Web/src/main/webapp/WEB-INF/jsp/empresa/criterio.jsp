@@ -58,14 +58,13 @@
                 >
                     
                   <tr>
-                      <%--    <th width="148"><font size="2">Nome</font></th> --%>
                     <th width="380"><font size="3">Descrição</font></th>
                     <th width="68"><font size="3">Perfil</font></th>
                     <th width="68"><font size="3">Peso</font></th>
                     <th width="53"><br /></th>
                   </tr>
                   <tr>
-                 <%--   <td><input type="text" name="nome" size="15" /></td>--%>
+                 
                     <td>
                         <div class="form-group">
                         <input type="text" name="descricao" size="25" class="form-control"/>

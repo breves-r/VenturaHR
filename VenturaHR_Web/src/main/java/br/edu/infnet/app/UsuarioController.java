@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
-//@SessionAttributes("user")
+@SessionAttributes("user")
 @Controller
 public class UsuarioController {
     
@@ -45,7 +45,7 @@ public class UsuarioController {
             }
             
             retorno.setViewName(destino);
-           // retorno.addObject("user", usuario);
+            retorno.addObject("user", usuario);
         }
         return retorno;
         

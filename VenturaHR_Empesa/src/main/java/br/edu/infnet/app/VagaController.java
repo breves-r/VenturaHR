@@ -62,6 +62,23 @@ public class VagaController {
         return retorno;
     }
     
+    @GetMapping(path="/id/{id}")
+    public ResponseEntity listaPorId(@PathVariable int id){
+        ResponseEntity retorno = ResponseEntity.notFound().build();
+        try{
+            
+            Vaga vaga = vagaRepository.findById(id);
+            if(vaga != null){
+                
+                retorno = ResponseEntity.ok().body(vaga);
+            }
+        } catch (Exception e){
+            
+        } 
+        return retorno;
+    }
+    
+    
     @GetMapping(path = "/cargo/{pesquisa}")
     public ResponseEntity listaPorCargo(@PathVariable String pesquisa){
         

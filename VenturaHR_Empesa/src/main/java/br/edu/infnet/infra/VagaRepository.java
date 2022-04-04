@@ -10,6 +10,8 @@ public interface VagaRepository extends CrudRepository<Vaga,Integer>{
     
     List<Vaga> findByIdUsuario(int idUsuario);
     
+    Vaga findById(int id);
+    
     List<Vaga> findByCargoContainingIgnoreCase(String pesquisa);
     
     List<Vaga> findByCidadeContainingIgnoreCase(String pesquisa);
